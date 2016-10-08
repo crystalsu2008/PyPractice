@@ -1,8 +1,7 @@
-#! /usr/bin/python
 import os,sys
 
 try:
-    srt1 = open("D:/Users/Crystal/Documents/GitHub/PyPractice-master/test2015-10-02en.srt", "r")
+    srt1 = open("D:/Users/Crystal/Documents/GitHub/PyPractice/srt_en.srt", "r")
 except IOError:
     print "The file don't exist, Please double check!"
     exit()
@@ -12,7 +11,7 @@ P = srt1.tell()
 print 'the postion is %d' %(P)
 
 try:
-    srt2 = open("D:/Users/Crystal/Documents/GitHub/PyPractice-master/test2015-10-02ch.srt", "r")
+    srt2 = open("D:/Users/Crystal/Documents/GitHub/PyPractice/srt_ch.srt", "r")
 except IOError:
     print "The file don't exist, Please double check!"
     exit()
@@ -21,7 +20,7 @@ print 'The file name is ',srt2.name
 P = srt2.tell()
 print 'the postion is %d' %(P)
 
-srtout = open('D:/Users/Crystal/Documents/GitHub/PyPractice-master/out.srt', 'w')
+srtout = open('D:/Users/Crystal/Documents/GitHub/PyPractice/srt_out.srt', 'w')
 
 dict1, dict2 = {}, {}
 
@@ -30,6 +29,11 @@ for EachLine in srt2:
         key = int(EachLine)
     except:
         continue
+
+    if key == 11:
+        print key
+    if key == 2:
+        print key
 
     time = srt2.next()
     nextline = srt2.next()
